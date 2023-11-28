@@ -1,5 +1,7 @@
-// L@@K CHALLENGE !!: SORTING ARRAY of OBJECTS by NUM and STR KEYS
-// Provide the missing code in the 3 spots that say "L@@K CHALLENGE !!"
+
+
+//  SORTING ARRAY of OBJECTS by NUM and STR KEYS
+
 
 // get the section (red box) which holds all the animals:
 const section = document.querySelector('section');
@@ -7,7 +9,7 @@ const section = document.querySelector('section');
 const sortMenu = document.querySelector('select');
 sortMenu.addEventListener('change', sortAnimals);
 
-// L@@K CHALLENGE !!
+
 //  write function that runs when checkbox is checked or unchecked
 // get the checkbox menu and have it run inline anon func:
 // - this code is very short, so rather than declare a function for this
@@ -86,6 +88,8 @@ function renderAnimals() { // output the 12 animals to the section
         }
         yearsP.innerHTML = yearsStr; // put animal yr string in p-tag
     } // end loop
+    // end of function
+
 } // end renderAnimals() function
 
 // sortAnimals() runs on change to select menu:
@@ -108,14 +112,18 @@ function sortAnimals() {
 // setInterval(callback, milisec)
 const wheel = document.querySelector('.wheel');
 let angle = 0;
-let wheelSpeed = 0.5;
+let wheelSpeed = 0.5; // the degrees  of rotation everytime it rotates 
 // get the slider (id="slider") and have it call 
 // a func on 'change'
 const slider = document.getElementById('slider');
+// every time slider is change, run functin inline to set wheel speed
+// based on slider value
+
 slider.addEventListener('change', function() {
     wheelSpeed = this.value / 100;
 })
 
+// every 25 milisec, increase the angle of rotation by the wheel speed
 window.setInterval(function() {
     angle += wheelSpeed;
     wheel.style.transform = `rotate(${angle}deg)`;
